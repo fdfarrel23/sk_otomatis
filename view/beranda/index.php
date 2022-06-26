@@ -41,8 +41,8 @@
         class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "
         id="sidenav-main">
         <div class="sidenav-header">
-            <a class="navbar-brand m-0 d-flex justify-content-center" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html "
-                target="_blank">
+            <a class="navbar-brand m-0 d-flex justify-content-center"
+                href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
                 <img src="resource/assets/img/logo.svg" class="h-100" alt="main_logo">
             </a>
         </div>
@@ -71,11 +71,28 @@
                     <a class="nav-link " href="index.php?controller=createSK&action=goToCreateSK">
                         <div
                             class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-file-earmark-diff-fill" viewBox="0 0 16 16">
-                                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8 6a.5.5 0 0 1 .5.5V8H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V9H6a.5.5 0 0 1 0-1h1.5V6.5A.5.5 0 0 1 8 6zm-2.5 6.5A.5.5 0 0 1 6 12h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
-                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green"
+                                class="bi bi-file-earmark-diff-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8 6a.5.5 0 0 1 .5.5V8H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V9H6a.5.5 0 0 1 0-1h1.5V6.5A.5.5 0 0 1 8 6zm-2.5 6.5A.5.5 0 0 1 6 12h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z" />
+                            </svg>
                         </div>
                         <span class="nav-link-text ms-1">Membuat Data SK</span>
+                    </a>
+                </li>
+                <li class="nav-item mt-5">
+                    <a class="nav-link " href="index.php?controller=login&action=logout">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                                class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd"
+                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Logout</span>
                     </a>
                 </li>
             </ul>
@@ -118,7 +135,7 @@
                                 </div>
                             </a>
                         </li>
-                       
+
                         <li class="nav-item dropdown px-2 d-flex align-items-center">
                             <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -130,7 +147,8 @@
                                     <a class="dropdown-item border-radius-md" href="javascript:;">
                                         <div class="d-flex py-1">
                                             <div class="my-auto">
-                                                <img src="../assets/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                                                <img src="../assets/assets/img/team-2.jpg"
+                                                    class="avatar avatar-sm  me-3 ">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="text-sm font-weight-normal mb-1">
@@ -212,23 +230,28 @@
                 <div class="col">
                     <div class="card p-4">
                         <div class="w-100 d-flex justify-content-center mb-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/id/4/44/Logo_PENS.png" width="120px" class="me-2"/>
+                            <img src="https://upload.wikimedia.org/wikipedia/id/4/44/Logo_PENS.png" width="120px"
+                                class="me-2" />
                         </div>
                         <div class="card-header pb-0 p-3">
                             <h4 class="mb-0">Selamat datang di Aplikasi Sistem Informasi SK Otomatis PENS</h4>
                         </div>
                         <div class="card-body p-3">
                             <div class="card-header pb-3 p-0">
-                                <p class="mb-0">Sistem Informasi ini memuat data -data tentang SK yang sudah ada dan sudah diubah menjadi bentuk softfile dan dapat di pilah sesuai topik dan kategori SK.</p >
+                                <p class="mb-0">Sistem Informasi ini memuat data -data tentang SK yang sudah ada dan
+                                    sudah diubah menjadi bentuk softfile dan dapat di pilah sesuai topik dan kategori
+                                    SK.</p>
                             </div>
                             <div class="card-header pb-0 p-0">
-                                <p class="mb-0">Sejak berdiri pada tahun 1989, PENS sudah berkembang dengan pesat. Dan tentunya SK yang dibutuhkan sangat banyak. Untuk itu maka diperlukan sistem yang dapat mempermudah dalam membuat dokumen SK-SK itu.</p >
+                                <p class="mb-0">Sejak berdiri pada tahun 1989, PENS sudah berkembang dengan pesat. Dan
+                                    tentunya SK yang dibutuhkan sangat banyak. Untuk itu maka diperlukan sistem yang
+                                    dapat mempermudah dalam membuat dokumen SK-SK itu.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </main>
     <!--   Core JS Files   -->
@@ -237,7 +260,7 @@
     <script src="resource/assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="resource/assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="resource/assets/js/plugins/chartjs.min.js"></script>
-   
+
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -246,7 +269,6 @@
             }
             Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
         }
-
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

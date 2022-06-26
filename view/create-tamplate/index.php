@@ -83,6 +83,21 @@
                         <span class="nav-link-text ms-1">Membuat Data SK</span>
                     </a>
                 </li>
+                <li class="nav-item mt-5">
+                    <a class="nav-link " href="index.php?controller=login&action=logout">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                                class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd"
+                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </aside>
@@ -210,7 +225,7 @@
             </div>
         </nav>
         <!-- End Navbar -->
-        <form method="POST" action="index.php?controller=createSK&action=createOutSK">
+        <form method="POST" action="index.php?controller=createSK&action=createOutSK" enctype="multipart/form-data">
             <div class="container-fluid py-4">
                 <div class="row mt-4">
                     <div class="col">
@@ -223,135 +238,159 @@
                             </div>
                             <div class="card-body p-3">
                                 <p>Klasifikasi</p>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" required aria-label="Default select example" name="klasifikasi">
                                     <option selected>-</option>
-                                    <option value="1">P2AI - Peningkatan dan Pengembangan Aktivitas Instruksional
+                                    <option value="P2AI - Peningkatan dan Pengembangan Aktivitas Instruksional">P2AI - Peningkatan dan Pengembangan Aktivitas Instruksional
                                     </option>
-                                    <option value="2">A - SUBSTANSIF</option>
-                                    <option value="3">B - FASILITATIF</option>
-                                    <option value="3">C - KEPEGAWAIAN</option>
-                                    <option value="3">D - KEUANGAN</option>
-                                    <option value="3">P3M - Pusat Penelitian dan Pengabdian Masyarakat</option>
+                                    <option value="A - SUBSTANSIF">A - SUBSTANSIF</option>
+                                    <option value="B - FASILITATIF">B - FASILITATIF</option>
+                                    <option value="C - KEPEGAWAIAN">C - KEPEGAWAIAN</option>
+                                    <option value="D - KEUANGAN">D - KEUANGAN</option>
+                                    <option value="P3M - Pusat Penelitian dan Pengabdian Masyarakat">P3M - Pusat Penelitian dan Pengabdian Masyarakat</option>
                                 </select>
                                 <p class="mt-3">Departemen</p>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" required aria-label="Default select example" name="departement">
                                     <option selected>-</option>
-                                    <option value="1">Teknik Elektro</option>
-                                    <option value="2">Teknik Informatika dan Komputer</option>
-                                    <option value="3">Teknik Mekanika dan Energi</option>
-                                    <option value="3">Teknologi Multimedia Kreatif</option>
-                                    <option value="3">PJJ</option>
-                                    <option value="3">Pascasarjana</option>
+                                    <option value="Teknik Elektro">Teknik Elektro</option>
+                                    <option value="Teknik Informatika dan Kompute">Teknik Informatika dan Komputer</option>
+                                    <option value="Teknik Mekanika dan Energi">Teknik Mekanika dan Energi</option>
+                                    <option value="Teknologi Multimedia Kreatif">Teknologi Multimedia Kreatif</option>
+                                    <option value="PJJ">PJJ</option>
+                                    <option value="Pascasarjana">Pascasarjana</option>
                                 </select>
                                 <p class="mt-3">Prodi</p>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" required aria-label="Default select example" name="prodi">
                                     <option selected>-</option>
-                                    <option value="1">Teknik Elektronika</option>
-                                    <option value="2">Teknik Telekomunikasi</option>
-                                    <option value="3">Teknik Elektro Industri</option>
-                                    <option value="3">Teknik Informatika</option>
-                                    <option value="3">Teknik Komputer</option>
-                                    <option value="3">Teknik Mekatronika</option>
-                                    <option value="3">Multimedia Broadcasting</option>
-                                    <option value="3">Sistem Pembangkit Energi</option>
-                                    <option value="3">Teknologi Game</option>
-                                    <option value="3">Teknologi Rekayasa Internet</option>
-                                    <option value="3">Teknologi Rekayasa Multimedia</option>
-                                    <option value="3">Sains Data Terapan</option>
+                                    <option value="Teknik Elektronika">Teknik Elektronika</option>
+                                    <option value="Teknik Telekomunikasi">Teknik Telekomunikasi</option>
+                                    <option value="Teknik Elektro Industri">Teknik Elektro Industri</option>
+                                    <option value="Teknik Informatika">Teknik Informatika</option>
+                                    <option value="Teknik Komputer">Teknik Komputer</option>
+                                    <option value="Teknik Mekatronika">Teknik Mekatronika</option>
+                                    <option value="Multimedia Broadcasting">Multimedia Broadcasting</option>
+                                    <option value="Sistem Pembangkit Energi">Sistem Pembangkit Energi</option>
+                                    <option value="Teknologi Game">Teknologi Game</option>
+                                    <option value="Teknologi Rekayasa Internet">Teknologi Rekayasa Internet</option>
+                                    <option value="Teknologi Rekayasa Multimedia">Teknologi Rekayasa Multimedia</option>
+                                    <option value="Sains Data Terapan">Sains Data Terapan</option>
                                 </select>
                                 <p class="mt-3">Unit</p>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" required aria-label="Default select example" name="unit">
                                     <option selected>-</option>
-                                    <option value="1">Administrasi ATK dan SPC</option>
-                                    <option value="2">Administrasi Akademik</option>
-                                    <option value="3">Administrasi Akademik Pascasarjana</option>
-                                    <option value="3">Administrasi Asrama</option>
-                                    <option value="3">Administrasi Departemen</option>
-                                    <option value="3">Administrasi Kantin/Koperasi</option>
-                                    <option value="3">Administrasi Karir dan Potensi Alummi</option>
-                                    <option value="3">Administrasi Kemahasiswaan</option>
-                                    <option value="3">Administrasi Kemitraan dan Ventura</option>
-                                    <option value="3">Administrasi Kepegawaian</option>
-                                    <option value="3">Administrasi Kerjasama</option>
-                                    <option value="3">Administrasi Keuangan</option>
-                                    <option value="3">Administrasi P3M</option>
-                                    <option value="3">Administrasi Pengadaan Barang dan Jasa</option>
-                                    <option value="3">Administrasi Perlengkapan</option>
-                                    <option value="3">Administrasi Program Studi</option>
-                                    <option value="3">Administrasi Rumah Tangga</option>
-                                    <option value="3">Administrasi Satuan Pengawas Internal</option>
-                                    <option value="3">Administrasi UPT Uji Kompetensi</option>
-                                    <option value="3">Administrasi Umum</option>
-                                    <option value="3">Administrasi Umum dan Kesekretariatan</option>
-                                    <option value="3">Administrasi Unit Inkubator Bisnis</option>
-                                    <option value="3">Administrasi Unit P2AI</option>
-                                    <option value="3">Administrasi Unit Penjaminan Mutu</option>
-                                    <option value="3">Administrasi Unit Perencanaan dan Pelaporan</option>
-                                    <option value="3">Administrasi Unit Urusan Internasional</option>
-                                    <option value="3">Administrasi VEDC</option>
-                                    <option value="3">Dosen</option>
-                                    <option value="3">Dosen Luar</option>
-                                    <option value="3">Dosen PSDKU Lamongan</option>
-                                    <option value="3">Dosen PSDKU Sumenep</option>
-                                    <option value="3">Dosen VEDC</option>
-                                    <option value="3">Kabag</option>
-                                    <option value="3">Kasubag</option>
-                                    <option value="3">Keamanan</option>
-                                    <option value="3">Keamanan Pascasariana</option>
-                                    <option value="3">Kebersihan</option>
-                                    <option value="3">Koordinator Keamanan</option>
-                                    <option value="3">Laboran</option>
-                                    <option value="3">Pegawai PSDKU Lamongan</option>
-                                    <option value="3">Pegawai PSDKU Sumenep</option>
-                                    <option value="3">Pengadministrasian Laboratorium Bahasa</option>
-                                    <option value="3">Petugas Parkir D3</option>
-                                    <option value="3">Petugas Perpustakaan D3</option>
-                                    <option value="3">Petugas Perpustakaan D4</option>
-                                    <option value="3">Petugas Perpustakaan Pascasarjana</option>
-                                    <option value="3">Petugas UPT. Komputer</option>
-                                    <option value="3">Petugas Unit Pengolahan Data Elektronik</option>
-                                    <option value="3">Pramu Bhakti</option>
-                                    <option value="3">Pramu Sarana dan Prasarana</option>
-                                    <option value="3">Sopir</option>
-                                    <option value="3">Teknisi Laboratorium</option>
-                                    <option value="3">Teknisi Perawatan dan Perbaikan</option>
-                                    <option value="3">Teknisi Umum</option>
-                                    <option value="3">Teknisi VEDC</option>
-                                    <option value="3">Tenaga Ahli/ Pakar</option>
-                                    <option value="3">Tenaga Medis</option>
-                                    <option value="3">Tenaga Taman</option>
-                                    <option value="3">Tim Kerja PSDKU</option>
+                                    <option value="Administrasi ATK dan SPC">Administrasi ATK dan SPC</option>
+                                    <option value="Administrasi Akademik">Administrasi Akademik</option>
+                                    <option value="Administrasi Akademik Pascasarjana">Administrasi Akademik Pascasarjana</option>
+                                    <option value="Administrasi Asrama">Administrasi Asrama</option>
+                                    <option value="Administrasi Departemen">Administrasi Departemen</option>
+                                    <option value="Administrasi Kantin/Koperasi">Administrasi Kantin/Koperasi</option>
+                                    <option value="Administrasi Karir dan Potensi Alummi">Administrasi Karir dan Potensi Alummi</option>
+                                    <option value="Administrasi Kemahasiswaan">Administrasi Kemahasiswaan</option>
+                                    <option value="Administrasi Kemitraan dan Ventura">Administrasi Kemitraan dan Ventura</option>
+                                    <option value="Administrasi Kepegawaian">Administrasi Kepegawaian</option>
+                                    <option value="Administrasi Kerjasama">Administrasi Kerjasama</option>
+                                    <option value="Administrasi Keuangan">Administrasi Keuangan</option>
+                                    <option value="Administrasi P3M">Administrasi P3M</option>
+                                    <option value="Administrasi Pengadaan Barang dan Jasa">Administrasi Pengadaan Barang dan Jasa</option>
+                                    <option value="Administrasi Perlengkapan">Administrasi Perlengkapan</option>
+                                    <option value="Administrasi Program Studi">Administrasi Program Studi</option>
+                                    <option value="Administrasi Rumah Tangga">Administrasi Rumah Tangga</option>
+                                    <option value="Administrasi Satuan Pengawas Internal">Administrasi Satuan Pengawas Internal</option>
+                                    <option value="Administrasi UPT Uji Kompetensi">Administrasi UPT Uji Kompetensi</option>
+                                    <option value="Administrasi Umum">Administrasi Umum</option>
+                                    <option value="dministrasi Umum dan Kesekretariatan">Administrasi Umum dan Kesekretariatan</option>
+                                    <option value="Administrasi Unit Inkubator Bisnis">Administrasi Unit Inkubator Bisnis</option>
+                                    <option value="Administrasi Unit P2AI<">Administrasi Unit P2AI</option>
+                                    <option value="Administrasi Unit Penjaminan Mutu">Administrasi Unit Penjaminan Mutu</option>
+                                    <option value="Administrasi Unit Perencanaan dan Pelaporan">Administrasi Unit Perencanaan dan Pelaporan</option>
+                                    <option value="Administrasi Unit Urusan Internasional<">Administrasi Unit Urusan Internasional</option>
+                                    <option value="Administrasi VEDC">Administrasi VEDC</option>
+                                    <option value="Dosen">Dosen</option>
+                                    <option value="Dosen Luar">Dosen Luar</option>
+                                    <option value="Dosen PSDKU Lamongan">Dosen PSDKU Lamongan</option>
+                                    <option value="Dosen PSDKU Sumenep">Dosen PSDKU Sumenep</option>
+                                    <option value="Dosen VEDC">Dosen VEDC</option>
+                                    <option value="Kabag<">Kabag</option>
+                                    <option value="Kasubag">Kasubag</option>
+                                    <option value="Keamanan">Keamanan</option>
+                                    <option value="Keamanan Pascasariana">Keamanan Pascasariana</option>
+                                    <option value="Kebersihan">Kebersihan</option>
+                                    <option value="Koordinator Keamanan">Koordinator Keamanan</option>
+                                    <option value="Laboran">Laboran</option>
+                                    <option value="Pegawai PSDKU Lamongan">Pegawai PSDKU Lamongan</option>
+                                    <option value="Pegawai PSDKU Sumenep">Pegawai PSDKU Sumenep</option>
+                                    <option value="Pengadministrasian Laboratorium Bahasa">Pengadministrasian Laboratorium Bahasa</option>
+                                    <option value="Petugas Parkir D3">Petugas Parkir D3</option>
+                                    <option value="Petugas Perpustakaan D3">Petugas Perpustakaan D3</option>
+                                    <option value="Petugas Perpustakaan D4">Petugas Perpustakaan D4</option>
+                                    <option value="Petugas Perpustakaan Pascasarjana">Petugas Perpustakaan Pascasarjana</option>
+                                    <option value="Petugas UPT. Komputer">Petugas UPT. Komputer</option>
+                                    <option value="Petugas Unit Pengolahan Data Elektronik">Petugas Unit Pengolahan Data Elektronik</option>
+                                    <option value="Pramu Bhakti">Pramu Bhakti</option>
+                                    <option value="Pramu Sarana dan Prasarana">Pramu Sarana dan Prasarana</option>
+                                    <option value="Sopir">Sopir</option>
+                                    <option value="Teknisi Laboratorium">Teknisi Laboratorium</option>
+                                    <option value="Teknisi Perawatan dan Perbaikan">Teknisi Perawatan dan Perbaikan</option>
+                                    <option value="Teknisi Umum">Teknisi Umum</option>
+                                    <option value="Teknisi VEDC">Teknisi VEDC</option>
+                                    <option value="Tenaga Ahli/ Pakar">Tenaga Ahli/ Pakar</option>
+                                    <option value="Tenaga Medis">Tenaga Medis</option>
+                                    <option value="Tenaga Taman">Tenaga Taman</option>
+                                    <option value="Tim Kerja PSDKU">Tim Kerja PSDKU</option>
                                 </select>
                                 <p class="mt-3">Template SK</p>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" required name="template">
                                     <option selected>-</option>
                                     <?php foreach($tamplates as $tamplate){ ?>
-                                    <option value="<?php echo $tamplate->sk_name ?>"><?php echo $tamplate->sk_name ?>
+                                    <option value="<?php echo $tamplate->id ?>"><?php echo $tamplate->sk_name ?>
                                     </option>
                                     <?php } ?>
                                 </select>
 
                                 <p class="mt-3">Pegawai / Dosen Terkait</p>
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" aria-label="Default select example" required name="pegawai">
                                     <option selected>-</option>
                                     <?php foreach($employees as $employee){ ?>
-                                    <option value="<?php echo $employee->name ?>"><?php echo $employee->name ?></option>
+                                    <option value="<?php echo $employee->id ?>"><?php echo $employee->name ?></option>
                                     <?php } ?>
                                 </select>
                                 <p class="mt-3">Perihal SK</p>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" required name="perihal">
                                 <p class="mt-3">Isi SK</p>
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file" required accept="application/pdf" name="fileupload">
                             </div>
                         </div>
                     </div>
                 </div>
+                <!--   Core JS Files   -->
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+                <div class="modal fade" id="successModal" data-backdrop="false" tabindex="-1" role="dialog"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body d-flex justify-content-center">
+                                <div>
+                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_9ljdzxac.json"
+                                        background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                                        autoplay>
+                                    </lottie-player>
+                                    <h4 class="text-center">SK Berhasil dibuat</h4>
+                                    <div class="w-100 d-flex justify-content-center mt-3 mb-">
+                                        <button type="submit" class="btn btn-success" >Download File SK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 d-flex justify-content-end pe-4 pb-5 mt-3">
+                    <button type="button" class="btn btn-success" id="button_submit">Submit</button>
+                </div>
             </div>
-            <div class="w-100 d-flex justify-content-end pe-4 pb-5">
-                <button type="submit" class="btn btn-success">Submit</button>
-            </div>
+
         </form>
+
+
     </main>
     <!--   Core JS Files   -->
     <script src="resource/assets/js/core/popper.min.js"></script>
@@ -359,6 +398,23 @@
     <script src="resource/assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="resource/assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script src="resource/assets/js/plugins/chartjs.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+         $('body').on('click', '#button_submit', function (event) {
+            event.preventDefault();
+            $("#successModal").modal('show');
+            
+            // $klasifikasi = $( "#klasifikasi option:selected" ).text();
+            // $departement = $( "#departement option:selected" ).text();
+            // $prodi = $( "#prodi option:selected" ).text();
+            // $unit = $( "#unit option:selected" ).text();
+            // $template = $( "#template  option:selected" ).text();
+            // $pegawai = $( "#pegawai  option:selected" ).text();
+            // $perihal = $( "#perihal" ).val();
+            // const fileupload = $('#formFile').prop('files')[0];
+        });
+    </script>
 
     <script>
         var win = navigator.platform.indexOf('Win') > -1;

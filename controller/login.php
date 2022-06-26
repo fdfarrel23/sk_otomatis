@@ -3,7 +3,7 @@
 class login{
     function check(){
         session_start();
-       if(isset( $_SESSION['login_id'])){
+       if(isset($_SESSION['login_id'])){
         $db = Db::getInstance();
         $result = mysqli_query($db,'SELECT * FROM user WHERE id='.$_SESSION['login_id'].'');
         $user = mysqli_fetch_assoc($result);
@@ -29,6 +29,13 @@ class login{
                 die();
             }
         }
+    }
+
+    function logout(){
+        session_start();
+        session_destroy();
+        header("Location: index.php?controller=login&action=check");
+        die();
     }
 }
 

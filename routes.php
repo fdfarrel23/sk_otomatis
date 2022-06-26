@@ -14,10 +14,10 @@ function call($controller,$action){
 
 
 //an array, for the allowed controllers and their respective actions
-$controllers = array('login' => ['check','goToRegister','autentifikasi'],
-                    'register' => ['goToLogin'],
+$controllers = array('login' => ['check','goToRegister','autentifikasi','logout'],
+                    'register' => ['goToLogin','registerAction'],
                     'beranda' => ['goToBeranda'],
-                    'tamplatelist' => ['goToListTamplate','searchTamplate','updateData'],
+                    'tamplatelist' => ['goToListTamplate','searchTamplate','updateData','deleteData','insertData'],
                     'createSK' => ['goToCreateSK','createOutSK'],
                    );
 

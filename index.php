@@ -15,6 +15,7 @@ if(isset($_GET["controller"])&&isset($_GET["action"])){
 }
 else
 {
+    
 //in case the product doesnt give us this values, we set them to a default controller and action
     $controller="login";
     $action="check";

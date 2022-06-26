@@ -1,8 +1,9 @@
 <?php
+require 'vendor/autoload.php';
 
-class CreateSK_Model{
+use Dompdf\Dompdf;
 
-    public $pdffiles = array();
+class CreateSK_Model{  
 
     public static function getPegawai(){
         require_once("model/pegawai.php");
@@ -16,14 +17,33 @@ class CreateSK_Model{
         return $list;
     }
 
-    public static function mergePDF(){
-      
-        require_once('resource/assets/library/fpdf_merge.php');
+    public static function mergePDF($template_url,$file_url){
 
-        $merge = new FPDF_Merge();
-        $merge->add('resource/assets/templates/ktp.pdf');
-        $merge->add('resource/assets/templates/doc2.pdf');
-        $merge->output();
+        $pdf = new \Jurosh\PDFMerge\PDFMerger;
+
+        // add as many pdfs as you want
+        $pdf->addPDF($template_url, 'all')
+        ->addPDF($file_url, 'all');
+
+        // call merge, output format `file`
+        $pdf->merge('file', 'resource/assets/templates_result/file_sk.pdf');
+
+
+        $file = 'resource/assets/templates_result/file_sk.pdf';
+
+        if(!file_exists($file)){ // file does not exist
+            die('file not found');
+        } else {
+            header("Cache-Control: public");
+            header("Content-Description: File Transfer");
+            header("Content-Disposition: attachment; filename=output file sk.pdf");
+            header("Content-Type: application/zip");
+            header("Content-Transfer-Encoding: binary");
+
+            // read the file from disk
+            readfile($file);
+            unlink($file);
+        }
       
     }
 

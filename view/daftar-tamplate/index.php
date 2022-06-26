@@ -80,6 +80,21 @@
                         <span class="nav-link-text ms-1">Membuat Data SK</span>
                     </a>
                 </li>
+                <li class="nav-item mt-5">
+                    <a class="nav-link " href="index.php?controller=login&action=logout">
+                        <div
+                            class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                                class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                <path fill-rule="evenodd"
+                                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                            </svg>
+                        </div>
+                        <span class="nav-link-text ms-1">Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </aside>
@@ -210,12 +225,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
-                        <div class="card-header pb-0">
+                        <div class="card-header pb-0 d-flex justify-content-between">
                             <h6>Daftar Tamplate SK</h6>
+                            <button type="button" class="btn btn-success" id="button_add_sk">+ Add</button>
                         </div>
-
                         <div class="mx-3 mb-3">
-                            <p class="mt-3 form-label">Kata kunci</p>
+                            <p class="mt-2 form-label">Kata kunci</p>
                             <div>
                                 <form class="d-flex" role="form" method="POST"
                                     action="index.php?controller=tamplatelist&action=searchTamplate">
@@ -239,7 +254,9 @@
                                                     <th
                                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                         Tanggal Buat</th>
-                                                    <th class="text-secondary opacity-7"></th>
+                                                    <th
+                                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                        Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -260,7 +277,7 @@
                                                         <span
                                                             class="text-secondary text-xs font-weight-bold"><?php echo $tamplate->date_created ?></span>
                                                     </td>
-                                                    <td class="align-middle">
+                                                    <td class="align-middle text-center">
                                                         <a href="javascript:;"
                                                             class="text-secondary font-weight-bold text-xs"
                                                             data-toggle="modal" data-target="#exampleModalCenter"
@@ -272,6 +289,12 @@
                                                             class="ms-4 text-info font-weight-bold text-xs">
                                                             Lihat
                                                         </a>
+
+                                                        <a href="javascript:;"
+                                                            class="text-danger font-weight-bold text-xs ms-4"
+                                                            data-id="<?php echo $tamplate->id ?>" id='delete-tamplate'>
+                                                            Delete
+                                                        </a>
                                                     </td>
                                                 </tr>
                                                 <?php } ?>
@@ -282,6 +305,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -297,12 +321,38 @@
                                     <input type="text" class="form-control" style="height:42px" name="title"
                                         id="title-modal">
                                     <p class="mt-3">Tamplate SK</p>
-                                    <input class="form-control" type="file" accept="application/pdf" id="modal-file" name="file">
+                                    <input class="form-control" type="file" accept="application/pdf" id="modal-file"
+                                        name="file">
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" id='close-modal'>Close</button>
                                 <button type="button" class="btn btn-primary" id='modal-save'>Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenteradd" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitleadd">Modal title</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form-modal">
+                                    <p class="mt-3">Title</p>
+                                    <input type="text" class="form-control" style="height:42px" name="title"
+                                        id="title-modal-add">
+                                    <p class="mt-3">Tamplate SK</p>
+                                    <input class="form-control" type="file" accept="application/pdf" id="modal-file-add"
+                                        name="file">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" id='close-modal-add'>Close</button>
+                                <button type="button" class="btn btn-primary" id='modal-save-add'>Save changes</button>
                             </div>
                         </div>
                     </div>
@@ -319,7 +369,7 @@
                                     <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_9ljdzxac.json"
                                         background="transparent" speed="1" style="width: 300px; height: 300px;" loop
                                         autoplay></lottie-player>
-                                    <h4 class="text-center">Berhasil Update Data</h4>
+                                    <h4 class="text-center">Berhasil Menjalankan Perintah</h4>
                                 </div>
                             </div>
                         </div>
@@ -337,6 +387,8 @@
 
     <script>
         var id_selected = '';
+
+        // edit-tamplate'
         $('body').on('click', '#edit-tamplate', function (event) {
             var name = $(this).data('name');
             id_selected = $(this).data('id');
@@ -378,6 +430,77 @@
                     }
                 });
             }
+        });
+        ///
+
+
+        // add tamplate
+        $('body').on('click', '#close-modal-add', function (event) {
+            $("#exampleModalCenteradd").modal('toggle');
+        });
+        $('body').on('click', '#button_add_sk', function (event) {
+            $("#exampleModalLongTitleadd").html("Tambah SK");
+            $("#exampleModalCenteradd").modal('show');
+        });
+        $('body').on('click', '#modal-save-add', function (event) {
+            // console.log(id_selected);
+            event.preventDefault();
+            var title_name = $('#title-modal-add').val();
+            const fileupload = $('#modal-file-add').prop('files')[0];
+            console.log(title_name);
+            if (title_name != "") {
+                let formData = new FormData();
+                if (fileupload != "") {
+                    formData.append('fileupload', fileupload);
+                }
+                formData.append('title_name', title_name);
+                formData.append('id', id_selected);
+                $.ajax({
+                    type: 'POST',
+                    url: "index.php?controller=tamplatelist&action=insertData",
+                    data: formData,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (msg) {
+                        $("#exampleModalCenteradd").modal('toggle');
+                        $("#successModal").modal('show');
+                        setTimeout(function () {
+                            window.location.reload(true);
+                        }, 1000);
+                    },
+                    error: function () {
+                        alert("Data Gagal Diupload");
+                    }
+                });
+            }
+        });
+        ///
+       
+        // delete tamplate
+        $('body').on('click', '#delete-tamplate', function (event) {
+            // console.log(id_selected);
+            event.preventDefault();
+            var id_delete = $(this).data('id');
+            let formData = new FormData();
+            formData.append('id', id_delete);
+            $.ajax({
+                type: 'POST',
+                url: "index.php?controller=tamplatelist&action=deleteData",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (msg) {
+                    $("#successModal").modal('show');
+                    setTimeout(function () {
+                        window.location.reload(true);
+                    }, 1000);
+                },
+                error: function () {
+                    alert("Data Gagal Diupload");
+                }
+            });
         });
     </script>
 
